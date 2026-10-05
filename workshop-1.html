@@ -26,7 +26,7 @@
     background-color: var(--bg);
     color: var(--fg);
     font-family: var(--sans);
-    line-height: 1.5;
+    line-height: 1;
     max-width: 900px;
     min-height: 100vh;
     display: flex;
@@ -37,11 +37,12 @@
     font-weight: 500;
     margin: 0;
     letter-spacing: -0.03em;
-    line-height: 1;
+    line-height: 0.36;
   }
 
   h1 {
     font-size: 3rem;
+    line-height: 85%;
   }
 
   h2 {
@@ -113,7 +114,8 @@
   }
 
   .entry {
-    padding-bottom: 5rem;
+    padding-bottom: 80px;
+    line-height: 1.5;
   }
 
   .entry p:first-child b {
@@ -127,15 +129,36 @@
     margin-bottom: 1rem;
   }
 
-  .placeholder {
-    width: 100%;
-    max-width: 480px;
-    aspect-ratio: 16 / 9;
-    border: 2px solid var(--fg);
-    background-color: var(--bg);
-    box-shadow: 8px 8px 0px var(--fg);
-    margin-top: 1.5rem;
-  }
+.pdf {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 16 / 9;
+  border: 2px solid var(--fg);
+  background-color: var(--bg);
+  box-shadow: 8px 8px 0px var(--fg);
+  margin-top: 1.5rem;
+  overflow: hidden;
+}
+
+.pdf iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.image-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  align-items: flex-start;
+}
+
+.image-row img {
+  height: 300px;
+  width: auto;
+  display: block;
+  border: 2px solid var(--fg);
+}
 </style>
 </head>
 <body>
@@ -147,8 +170,8 @@
 <a class="back" href="index.html">&larr; Home</a>
 
 <div class="intro">
-  <h1>Unlikely + Time + Scale</h1>
-  <p>Process Book</p>
+  <h1>Process Book</h1>
+  <p>Unlikely + Time + Scale</p>
 </div>
 
 <div class="log">
@@ -156,30 +179,182 @@
   <div class="entry">
     <p><b>14th September 2026</b></p>
     <h2>Introduction Presentation</h2>
-    <p>[enter text]</p>
-    <div class="placeholder"></div>
+    <p>First day of Workshop 1, gave my intro presentation which I created over the last few days. The introduction made me think about what ideas I had been listing down and thinking about over the last few months and what really interested me- tangibly in a designed form, which made it interesting, it also gave me an opportunity to show some of my photography :P</p>
+    <div class="pdf">
+      <iframe
+        src="media/Introduction_Ayaan%20Ahmed.pdf"
+        title="Introduction - Ayaan Ahmed">
+      </iframe>
+    </div>
   </div>
 
-  <div class="entry">
-    <p><b>21st September 2026</b></p>
-    <h2>Collective Research Proposal v1</h2>
-    <p>[enter text]</p>
-    <div class="placeholder"></div>
-  </div>
+<div class="entry">
+  <p><b>21st September 2026</b></p>
+  <h2>Collective Research Proposal v1</h2>
+  <p>
+    v1 of the research proposal, I used numerous of ideas I had dotted down over the months to compress them into three main ideas I felt captured the same themes I felt. In v1 I created one primary element that my peers & profs said they liked: the icons. The icons came from me asking my mom and sister what those words feel like in symbols and they really worked out in a sort of system.
+  </p>
+    <div class="image-row">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168412/V1_1.jpg" alt="proposal image">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168243/V1_2.jpg" alt="proposal image">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168414/V1_3.jpg" alt="proposal image">
+    </div>
+</div>
 
-  <div class="entry">
-    <p><b>24th September 2026</b></p>
-    <h2>Collective Research Proposal v2</h2>
-    <p>[enter text]</p>
-    <div class="placeholder"></div>
-  </div>
+<div class="entry">
+  <p><b>24th September 2026</b></p>
+  <h2>Collective Research Proposal v2</h2>
+  <p>
+    v2 of the proposal, prof Eric said that my layouts needed more variety so I created these varying columns and messed around with my existing elements. I was told that the cover would have a half-page flap so I wrote the theme names sideways on half of the cover, and then to not repeat it on the back, I turned the three terms into a short phrase.
+  </p>
+    <div class="image-row">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_1.jpg" alt="proposal image">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_2.jpg" alt="proposal image">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_3.jpg" alt="proposal image">
+    </div>
+</div>
 
-  <div class="entry">
-    <p><b>28th September 2026</b></p>
-    <h2>Collective Research Proposal v3</h2>
-    <p>[enter text]</p>
-    <div class="placeholder"></div>
-  </div>
+<div class="entry">
+  <p><b>24th September 2026</b></p>
+  <h2>Office Hrs with prof Christine</h2>
+  <p>
+    I had a virtual meeting with prof Christine where she gave me some insight on v2, and gave me some ideas moving forward. The meeting pushed me to gather more images from my examples, use the existing elements with more purpose, and fix some formatting errors.
+  </p>
+</div>
+
+<div class="entry">
+  <p><b>28th September 2026</b></p>
+  <h2>Collective Research Proposal v3 + Print Day</h2>
+  <p>
+    v3, the final version came together out of various ideas and variation, the cover came from an idea prof Christine gave me in office hours, I used the "timeline" lines I had with more purpose, Used my icon system with more function, and added more images in very random places. I had been told till the very end that my idea was very "all over the place" but my design style/philosophy is really organized, opposites attract :P<br>(also printed out pages 1 & 3 on the risograph machine, cost like 30$)
+  </p>
+    <div class="image-row">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169052/V3_1.jpg" alt="proposal image">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169052/V3_2.jpg" alt="proposal image">
+      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169053/V3_3.jpg" alt="proposal image">
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>5th October 2026</b></p>
+  <h2>Proposal Binding + Project 1 +  This Process Site</h2>
+  <p>
+    I created this process site with the help of some online sources, embedding the pdf for the first entry (intro) was kind of hard because I thought I could just link it to a Cloudinary link like I am for the rest of the images on the site.
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>12th October 2026</b></p>
+  <h2>Reading Week</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>19th October 2026</b></p>
+  <h2>tbd</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>26th October 2026</b></p>
+  <h2>tbd</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>2nd November 2026</b></p>
+  <h2>Project 1 Due</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>9th November 2026</b></p>
+  <h2>tbd</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>16th November 2026</b></p>
+  <h2>tbd</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>23rd November 2026</b></p>
+  <h2>tbd</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>30th November 2026</b></p>
+  <h2>tbd</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>7th December 2026</b></p>
+  <h2>tbd</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
+
+<div class="entry">
+  <p><b>11th December 2026</b></p>
+  <h2>Project 2 + Process Documentation Due</h2>
+  <p>
+    coming soon
+  </p>
+    <div class="image-row">
+     
+    </div>
+</div>
 
 </div>
 
