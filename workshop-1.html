@@ -5,14 +5,14 @@
 <title>W1 / Process</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
 
 <style>
   :root {
     --bg: #f4f4f0; 
     --fg: #111111;
-    --sans: "Geist", sans-serif;
+    --sans: "DM Sans", sans-serif;
     --mono: "Geist Pixel", monospace;
   }
 
@@ -26,28 +26,35 @@
     background-color: var(--bg);
     color: var(--fg);
     font-family: var(--sans);
-    line-height: 1;
-    max-width: 900px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
 
-  h1, h2 {
+  h1, h2, h3 {
     font-weight: 500;
     margin: 0;
-    letter-spacing: -0.03em;
-    line-height: 0.36;
+    line-height: 1.2;
   }
 
   h1 {
     font-size: 3rem;
-    line-height: 85%;
   }
 
   h2 {
     font-size: 1.75rem;
     margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-family: var(--mono);
   }
 
   header {
@@ -61,17 +68,6 @@
     filter: invert(1);
   }
 
-  footer {
-    padding-top: 1rem;
-    margin-top: auto;
-  }
-
-  footer p {
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    margin: 0;
-  }
-
   .back {
     display: inline-flex;
     align-self: flex-start;
@@ -81,16 +77,13 @@
     text-decoration: none;
     padding: 6px 12px;
     border: 2px solid var(--fg);
-    box-shadow: 4px 4px 0px var(--fg);
-    margin-bottom: 2rem;
-    transition: transform 0.1s, box-shadow 0.1s;
+    margin-bottom: 3rem;
+    transition: background-color 0.2s, color 0.2s;
   }
 
   .back:hover {
     background-color: var(--fg);
     color: var(--bg);
-    transform: translate(4px, 4px);
-    box-shadow: 0px 0px 0px var(--fg);
   }
 
   .intro {
@@ -103,8 +96,14 @@
     margin: 0.5rem 0 0 0;
   }
 
+  .layout-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+  }
+
   .log {
-    padding-left: 50px;
+    padding-left: 40px;
     background-image:
       linear-gradient(to right, var(--fg) 2px, transparent 2px),
       repeating-linear-gradient(to bottom, var(--fg) 0px, var(--fg) 2px, transparent 2px, transparent 24px);
@@ -114,8 +113,11 @@
   }
 
   .entry {
-    padding-bottom: 80px;
-    line-height: 1.5;
+    padding-bottom: 5rem;
+  }
+
+  .entry p {
+    max-width: 65ch;
   }
 
   .entry p:first-child b {
@@ -129,36 +131,81 @@
     margin-bottom: 1rem;
   }
 
-.pdf {
-  width: 100%;
-  max-width: 480px;
-  aspect-ratio: 16 / 11;
-  border: 2px solid var(--fg);
-  background-color: var(--bg);
-  box-shadow: 8px 8px 0px var(--fg);
-  margin-top: 1.5rem;
-  overflow: hidden;
-}
+  .pdf {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 16 / 11;
+    border: 2px solid var(--fg);
+    background-color: var(--bg);
+    margin-top: 1.5rem;
+    overflow: hidden;
+  }
 
-.pdf iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-.image-row {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  align-items: flex-start;
-}
+  .pdf iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 
-.image-row img {
-  height: 300px;
-  width: auto;
-  display: block;
-  border: 2px solid var(--fg);
-}
+  .image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .image-row img {
+    height: 250px;
+    width: auto;
+    display: block;
+    border: 2px solid var(--fg);
+  }
+
+  .sidebar {
+    border-left: 2px solid var(--fg);
+    padding-left: 2rem;
+  }
+
+  .sidebar-section {
+    margin-bottom: 3rem;
+  }
+
+  .sidebar ul {
+    list-style-type: square;
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+
+  .sidebar li {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    max-width: 50ch;
+  }
+
+  .sidebar a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .sidebar a:hover {
+    background-color: var(--fg);
+    color: var(--bg);
+    text-decoration: none;
+  }
+
+  @media (max-width: 900px) {
+    .layout-grid {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      border-left: none;
+      border-top: 2px solid var(--fg);
+      padding-left: 0;
+      padding-top: 2rem;
+    }
+  }
 </style>
 </head>
 <body>
@@ -174,193 +221,189 @@
   <p>Unlikely + Time + Scale</p>
 </div>
 
-<div class="log">
+<div class="layout-grid">
+  
+  <div class="log">
+    <div class="entry">
+      <p><b>14th September 2026</b></p>
+      <h2>Introduction Presentation</h2>
+      <p>First day of Workshop 1, gave my intro presentation which I created over the last few days. The introduction made me think about what ideas I had been listing down and thinking about over the last few months and what really interested me- tangibly in a designed form, which made it interesting, it also gave me an opportunity to show some of my photography :P</p>
+      <div class="pdf">
+        <iframe src="media/Introduction_Ayaan%20Ahmed.pdf" title="Introduction - Ayaan Ahmed"></iframe>
+      </div>
+    </div>
 
-  <div class="entry">
-    <p><b>14th September 2026</b></p>
-    <h2>Introduction Presentation</h2>
-    <p>First day of Workshop 1, gave my intro presentation which I created over the last few days. The introduction made me think about what ideas I had been listing down and thinking about over the last few months and what really interested me- tangibly in a designed form, which made it interesting, it also gave me an opportunity to show some of my photography :P</p>
-    <div class="pdf">
-      <iframe
-        src="media/Introduction_Ayaan%20Ahmed.pdf"
-        title="Introduction - Ayaan Ahmed">
-      </iframe>
+    <div class="entry">
+      <p><b>21st September 2026</b></p>
+      <h2>Collective Research Proposal v1</h2>
+      <p>v1 of the research proposal, I used numerous of ideas I had dotted down over the months to compress them into three main ideas I felt captured the same themes I felt. In v1 I created one primary element that my peers & profs said they liked: the icons. The icons came from me asking my mom and sister what those words feel like in symbols and they really worked out in a sort of system.</p>
+      <div class="image-row">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168412/V1_1.jpg" alt="proposal image">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168243/V1_2.jpg" alt="proposal image">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168414/V1_3.jpg" alt="proposal image">
+      </div>
+    </div>
+
+    <div class="entry">
+      <p><b>24th September 2026</b></p>
+      <h2>Collective Research Proposal v2</h2>
+      <p>v2 of the proposal, prof Eric said that my layouts needed more variety so I created these varying columns and messed around with my existing elements. I was told that the cover would have a half-page flap so I wrote the theme names sideways on half of the cover, and then to not repeat it on the back, I turned the three terms into a short phrase.</p>
+      <div class="image-row">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_1.jpg" alt="proposal image">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_2.jpg" alt="proposal image">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_3.jpg" alt="proposal image">
+      </div>
+    </div>
+
+    <div class="entry">
+      <p><b>24th September 2026</b></p>
+      <h2>Office Hrs with prof Christine</h2>
+      <p>I had a virtual meeting with prof Christine where she gave me some insight on v2, and gave me some ideas moving forward. The meeting pushed me to gather more images from my examples, use the existing elements with more purpose, and fix some formatting errors.</p>
+    </div>
+
+    <div class="entry">
+      <p><b>28th September 2026</b></p>
+      <h2>Collective Research Proposal v3 + Print Day</h2>
+      <p>v3, the final version came together out of various ideas and variation, the cover came from an idea prof Christine gave me in office hours, I used the "timeline" lines I had with more purpose, Used my icon system with more function, and added more images in very random places. I had been told till the very end that my idea was very "all over the place" but my design style/philosophy is really organized, opposites attract :P<br>(also printed out pages 1 & 3 on the risograph machine, cost like 30$)</p>
+      <div class="image-row">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169052/V3_1.jpg" alt="proposal image">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169052/V3_2.jpg" alt="proposal image">
+        <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169053/V3_3.jpg" alt="proposal image">
+      </div>
+    </div>
+
+    <div class="entry">
+      <p><b>5th October 2026</b></p>
+      <h2>Proposal Binding + Project 1 + This Process Site</h2>
+      <p>I created this process site with the help of some online sources, embedding the pdf for the first entry (intro) was kind of hard because I thought I could just link it to a Cloudinary link like I am for the rest of the images on the site.</p>
+    </div>
+
+    <div class="entry">
+      <p><b>12th October 2026</b></p>
+      <h2>Reading Week</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>19th October 2026</b></p>
+      <h2>tbd</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>26th October 2026</b></p>
+      <h2>tbd</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>2nd November 2026</b></p>
+      <h2>Project 1 Due</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>9th November 2026</b></p>
+      <h2>tbd</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>16th November 2026</b></p>
+      <h2>tbd</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>23rd November 2026</b></p>
+      <h2>tbd</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>30th November 2026</b></p>
+      <h2>tbd</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>7th December 2026</b></p>
+      <h2>tbd</h2>
+      <p>coming soon</p>
+    </div>
+
+    <div class="entry">
+      <p><b>11th December 2026</b></p>
+      <h2>Project 2 + Process Documentation Due</h2>
+      <p>coming soon</p>
     </div>
   </div>
 
-<div class="entry">
-  <p><b>21st September 2026</b></p>
-  <h2>Collective Research Proposal v1</h2>
-  <p>
-    v1 of the research proposal, I used numerous of ideas I had dotted down over the months to compress them into three main ideas I felt captured the same themes I felt. In v1 I created one primary element that my peers & profs said they liked: the icons. The icons came from me asking my mom and sister what those words feel like in symbols and they really worked out in a sort of system.
-  </p>
-    <div class="image-row">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168412/V1_1.jpg" alt="proposal image">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168243/V1_2.jpg" alt="proposal image">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168414/V1_3.jpg" alt="proposal image">
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <h3>Key Takeaways & Points</h3>
+      <ul>
+        <li>I gathered some of these examples from my own experiences, I was surprised there was this unlikely thing.</li>
+        <li>As humans we understand the world through default assumptions and categories.</li>
+        <li>We're indoctrinated to see certain things as separate, but everything is more interconnected than traditional framing suggests.</li>
+        <li>Bridging seemingly distinct concepts shifts audience perception and assumptions.</li>
+        <li>These insights offer a novel framework rather than simple trivia.</li>
+      </ul>
     </div>
-</div>
 
-<div class="entry">
-  <p><b>24th September 2026</b></p>
-  <h2>Collective Research Proposal v2</h2>
-  <p>
-    v2 of the proposal, prof Eric said that my layouts needed more variety so I created these varying columns and messed around with my existing elements. I was told that the cover would have a half-page flap so I wrote the theme names sideways on half of the cover, and then to not repeat it on the back, I turned the three terms into a short phrase.
-  </p>
-    <div class="image-row">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_1.jpg" alt="proposal image">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_2.jpg" alt="proposal image">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791168981/V2_3.jpg" alt="proposal image">
+    <div class="sidebar-section">
+      <h3>Example Sources</h3>
+      <ul>
+        <li><a href="https://d23.com/this-day/the-first-newman-laugh-o-gram-premieres-at-newman-theater-in-kansas-city/" target="_blank">Laugh-O-Gram Premiere - D23</a></li>
+        <li><a href="https://www.britannica.com/place/Ottoman-Empire" target="_blank">Ottoman Empire - Britannica</a></li>
+        <li><a href="https://www.science.org/doi/10.1126/science.aaf1703" target="_blank">Science Journal Publication</a></li>
+        <li>Ripley's Believe It or Not Oddities</li>
+        <li><a href="https://en.wikipedia.org/wiki/List_of_generic_and_genericized_trademarks" target="_blank">Generic Trademarks - Wikipedia</a></li>
+      </ul>
     </div>
-</div>
 
-<div class="entry">
-  <p><b>24th September 2026</b></p>
-  <h2>Office Hrs with prof Christine</h2>
-  <p>
-    I had a virtual meeting with prof Christine where she gave me some insight on v2, and gave me some ideas moving forward. The meeting pushed me to gather more images from my examples, use the existing elements with more purpose, and fix some formatting errors.
-  </p>
-</div>
-
-<div class="entry">
-  <p><b>28th September 2026</b></p>
-  <h2>Collective Research Proposal v3 + Print Day</h2>
-  <p>
-    v3, the final version came together out of various ideas and variation, the cover came from an idea prof Christine gave me in office hours, I used the "timeline" lines I had with more purpose, Used my icon system with more function, and added more images in very random places. I had been told till the very end that my idea was very "all over the place" but my design style/philosophy is really organized, opposites attract :P<br>(also printed out pages 1 & 3 on the risograph machine, cost like 30$)
-  </p>
-    <div class="image-row">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169052/V3_1.jpg" alt="proposal image">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169052/V3_2.jpg" alt="proposal image">
-      <img src="https://res.cloudinary.com/sgvlj0gl/image/upload/v1791169053/V3_3.jpg" alt="proposal image">
+    <div class="sidebar-section">
+      <h3>Research Sources</h3>
+      <ul>
+        <li><a href="https://www.washingtonpost.com/entertainment/books/cabinets-of-curiosities-delves-into-the-history-of-collectors-and-their-stunning-strange-acquisitions/2019/10/23/bfc15246-f0f5-11e9-8693-f487e46784aa_story.html" target="_blank">Cabinets of Curiosities - Washington Post</a></li>
+        <li><a href="https://www.goodreads.com/book/show/1114823.Heritage_of_Our_Times" target="_blank">Heritage of Our Times - Goodreads</a></li>
+        <li><a href="https://www.penguinrandomhouse.ca/books/408970/cabinets-of-curiosities-by-patrick-mauries/9780500515945" target="_blank">Cabinets of Curiosities - Penguin</a></li>
+        <li><a href="https://books.google.ca/books/about/Unexplained_Happenings.html?id=isUwvgAACAAJ&source=kp_book_description&redir_esc=y" target="_blank">Unexplained Happenings - Google Books</a></li>
+        <li><a href="https://cus.ubt-uni.net/wp-content/uploads/2024/11/Kevin-Lynch-The-Image-of-the-City.pdf" target="_blank">Kevin Lynch: The Image of the City</a></li>
+        <li>Marcel Proust: In Search of Lost Time</li>
+        <li>Georges Perec: Species of Spaces and Other Pieces</li>
+        <li>Gaston Bachelard: The Poetics of Space</li>
+        <li><a href="https://en.wikipedia.org/wiki/The_Scout_Mindset" target="_blank">Julia Galef: The Scout Mindset</a></li>
+        <li><a href="https://www.instagram.com/reels/DdX4sZ_P35G/" target="_blank">Instagram Reference Reel</a></li>
+      </ul>
     </div>
-</div>
 
-<div class="entry">
-  <p><b>5th October 2026</b></p>
-  <h2>Proposal Binding + Project 1 +  This Process Site</h2>
-  <p>
-    I created this process site with the help of some online sources, embedding the pdf for the first entry (intro) was kind of hard because I thought I could just link it to a Cloudinary link like I am for the rest of the images on the site.
-  </p>
-    <div class="image-row">
-     
+    <div class="sidebar-section">
+      <h3>Visual Inspiration</h3>
+      <ul>
+        <li><a href="https://monitor-the-situation.com/eastern-europe" target="_blank">Monitor the Situation: Eastern Europe</a></li>
+        <li><a href="https://www.thegitcity.com/" target="_blank">The Git City</a></li>
+        <li><a href="https://globe.gl/example/world-population/" target="_blank">Globe.gl: World Population</a></li>
+        <li><a href="https://stuffin-space.vader.zone/?intldes=1976-008G" target="_blank">Stuff in Space</a></li>
+        <li><a href="https://globe.gl/example/satellites/" target="_blank">Globe.gl: Satellites</a></li>
+        <li><a href="https://thetruesize.com/#?borders=1~!MTM3OTA3Mzk.Mzc1NDkyNA*MzIyNjg5OTk(NzEzMjI4MA~!CONTIGUOUS_US*MTAwMjQwNzU.MjUwMjM1MTc(MTc1)MQ~!IN*NTI2NDA1MQ.Nzg2MzQyMQ)Mg~!CN*OTkyMTY5Nw.NzMxNDcwNQ(MjI1)Mw" target="_blank">The True Size Of ...</a></li>
+        <li><a href="https://2050.earth/" target="_blank">Earth 2050</a></li>
+        <li><a href="https://basetoolbox.com/geojson-globe-viewer/" target="_blank">GeoJSON Globe Viewer</a></li>
+        <li><a href="https://globe.gl/example/airline-routes/us-international-outbound.html" target="_blank">Globe.gl: Airline Routes</a></li>
+        <li><a href="https://wplace.live/" target="_blank">wplace.live</a></li>
+        <li><a href="https://globe.gl/" target="_blank">Globe.gl Home</a></li>
+        <li><a href="https://journey.world/" target="_blank">Journey World</a></li>
+        <li><a href="https://pgavdestinations.com/" target="_blank">PGAV Destinations</a></li>
+        <li><a href="https://www.indepthcine.com/videos/ozu" target="_blank">In Depth Cine: Yasujiro Ozu</a></li>
+        <li><a href="https://www.newyorker.com/books/page-turner/here-then-and-now-richard-mcguire" target="_blank">The New Yorker: 'Here'</a></li>
+        <li><a href="https://www.theguardian.com/books/2014/dec/17/chris-ware-here-richard-mcguire-review-graphic-novel" target="_blank">The Guardian: 'Here' Review</a></li>
+        <li><a href="https://www.youtube.com/watch?v=I_id-SkGU2k" target="_blank">YouTube: 'Here' Adaptation Preview</a></li>
+        <li>SimCity BuildIt</li>
+      </ul>
     </div>
-</div>
-
-<div class="entry">
-  <p><b>12th October 2026</b></p>
-  <h2>Reading Week</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>19th October 2026</b></p>
-  <h2>tbd</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>26th October 2026</b></p>
-  <h2>tbd</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>2nd November 2026</b></p>
-  <h2>Project 1 Due</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>9th November 2026</b></p>
-  <h2>tbd</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>16th November 2026</b></p>
-  <h2>tbd</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>23rd November 2026</b></p>
-  <h2>tbd</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>30th November 2026</b></p>
-  <h2>tbd</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>7th December 2026</b></p>
-  <h2>tbd</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
-
-<div class="entry">
-  <p><b>11th December 2026</b></p>
-  <h2>Project 2 + Process Documentation Due</h2>
-  <p>
-    coming soon
-  </p>
-    <div class="image-row">
-     
-    </div>
-</div>
+  </div>
 
 </div>
-
-<footer>
-  <p>Ayaan Ahmed</p>
-</footer>
 
 </body>
 </html>
