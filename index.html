@@ -5,14 +5,14 @@
 <title>Process Book / Home</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
 
 <style>
   :root {
     --bg: #f4f4f0; 
     --fg: #111111;
-    --sans: "Geist", sans-serif;
+    --sans: "DM Sans", sans-serif;
     --mono: "Geist Pixel", monospace;
   }
 
@@ -27,42 +27,45 @@
     color: var(--fg);
     font-family: var(--sans);
     line-height: 1.5;
-    max-width: 900px;
+    letter-spacing: 0.02em;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   h1, h2 {
     font-weight: 500;
     margin: 0;
-    letter-spacing: -0.03em;
-    line-height: 1;
+    line-height: 1.2;
   }
 
   h1 {
     font-size: 3rem;
+    margin-bottom: 0.5rem;
   }
 
   h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
   }
 
   .wip {
     font-family: var(--mono);
     font-size: 1rem;
     color: #888;
-    font-weight: 400;
     vertical-align: middle;
-    margin-left: 10px;
-    letter-spacing: normal;
+    margin-left: 8px;
   }
 
   header {
+    width: 100%;
+    max-width: 900px;
     display: flex;
+    justify-content: center;
     padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
 
   header img {
@@ -70,30 +73,14 @@
     filter: invert(1);
   }
 
-  footer {
-    padding-top: 1rem;
-    margin-top: auto;
-  }
-
-  footer p {
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    margin: 0;
-  }
-
   .intro {
     margin-bottom: 3rem;
-  }
-
-  .intro p {
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    margin: 0.5rem 0 0 0;
   }
 
   .links {
     display: flex;
     gap: 1.5rem;
+    justify-content: center;
     margin-top: 1rem;
   }
 
@@ -105,23 +92,19 @@
     text-decoration: none;
     padding: 10px 20px;
     border: 2px solid var(--fg);
-    box-shadow: 4px 4px 0px var(--fg);
     background-color: var(--bg);
-    transition: transform 0.1s, box-shadow 0.1s, background-color 0.1s, color 0.1s;
+    transition: background-color 0.2s, color 0.2s;
     cursor: pointer;
   }
 
   .btn:hover:not(.disabled) {
     background-color: var(--fg);
     color: var(--bg);
-    transform: translate(4px, 4px);
-    box-shadow: 0px 0px 0px var(--fg);
   }
 
   .btn.disabled {
     color: #888;
     border-color: #888;
-    box-shadow: 4px 4px 0px #888;
     text-decoration: line-through;
     cursor: not-allowed;
   }
@@ -134,18 +117,14 @@
 </header>
 
 <div class="intro">
-  <h1>Unlikely + Time + Scale <span class="wip">[work in progress]</span></h1>
-  <p>Process Book</p>
+  <h1>Process Book</h1>
+  <h2>Unlikely + Time + Scale <span class="wip">[work in progress]</span></h2>
 </div>
 
 <div class="links">
   <a href="workshop-1.html" class="btn">Workshop 1</a>
   <span class="btn disabled">Workshop 2</span>
 </div>
-
-<footer>
-  <p>Ayaan Ahmed</p>
-</footer>
 
 </body>
 </html>
