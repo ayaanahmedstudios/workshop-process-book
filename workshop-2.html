@@ -5,14 +5,14 @@
 <title>W2 / Process</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
 
 <style>
   :root {
     --bg: #f4f4f0; 
     --fg: #111111;
-    --sans: "Geist", sans-serif;
+    --sans: "DM Sans", sans-serif;
     --mono: "Geist Pixel", monospace;
   }
 
@@ -27,22 +27,26 @@
     color: var(--fg);
     font-family: var(--sans);
     line-height: 1.5;
-    max-width: 900px;
+    letter-spacing: 0.02em;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   h1 {
     font-weight: 500;
     margin: 0;
     font-size: 3rem;
-    letter-spacing: -0.03em;
-    line-height: 1;
+    line-height: 1.2;
   }
 
   header {
+    width: 100%;
+    max-width: 900px;
     display: flex;
+    justify-content: flex-start;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
   }
@@ -52,36 +56,28 @@
     filter: invert(1);
   }
 
-  footer {
-    padding-top: 1rem;
-    margin-top: auto;
-  }
-
-  footer p {
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    margin: 0;
+  .back-nav {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .back {
     display: inline-flex;
-    align-self: flex-start;
     font-family: var(--mono);
     font-size: 0.95rem;
     color: var(--fg);
     text-decoration: none;
     padding: 6px 12px;
     border: 2px solid var(--fg);
-    box-shadow: 4px 4px 0px var(--fg);
-    margin-bottom: 2rem;
-    transition: transform 0.1s, box-shadow 0.1s;
+    margin-bottom: 4rem;
+    transition: background-color 0.2s, color 0.2s;
   }
 
   .back:hover {
     background-color: var(--fg);
     color: var(--bg);
-    transform: translate(4px, 4px);
-    box-shadow: 0px 0px 0px var(--fg);
   }
 
   .intro {
@@ -108,18 +104,16 @@
   <img src="https://res.cloudinary.com/ayaanahmed/image/upload/v1769144180/ayaan-ahmed-logo_pqauyp.svg" alt="Ayaan Ahmed">
 </header>
 
-<a class="back" href="index.html">&larr; Home</a>
+<div class="back-nav">
+  <a class="back" href="index.html">&larr; Home</a>
+</div>
 
 <div class="intro">
-  <h1>Unlikely + Time + Scale</h1>
-  <p>Process Book</p>
+  <h1>Process Book</h1>
+  <p>Unlikely + Time + Scale</p>
 </div>
 
 <p class="soon">Workshop 2 coming soon.</p>
-
-<footer>
-  <p>Ayaan Ahmed</p>
-</footer>
 
 </body>
 </html>
