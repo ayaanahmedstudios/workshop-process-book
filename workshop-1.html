@@ -27,13 +27,18 @@
     color: var(--fg);
     font-family: var(--sans);
     line-height: 1.5;
-    letter-spacing: 0.02em;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1400px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+  }
+
+  p, h1, h2, h3, li, a {
+    text-wrap: pretty;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
   }
 
   h1, h2, h3 {
@@ -98,8 +103,9 @@
 
   .layout-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(auto, 800px) 1fr;
     gap: 4rem;
+    align-items: start;
   }
 
   .log {
@@ -117,7 +123,7 @@
   }
 
   .entry p {
-    max-width: 65ch;
+    max-width: 60ch;
   }
 
   .entry p:first-child b {
@@ -341,7 +347,7 @@
 
   <div class="sidebar">
     <div class="sidebar-section">
-      <h3>Key Takeaways & Points</h3>
+      <h3>Key Points</h3>
       <ul>
         <li>I gathered some of these examples from my own experiences, I was surprised there was this unlikely thing.</li>
         <li>As humans we understand the world through default assumptions and categories.</li>
@@ -370,9 +376,6 @@
         <li><a href="https://www.penguinrandomhouse.ca/books/408970/cabinets-of-curiosities-by-patrick-mauries/9780500515945" target="_blank">Cabinets of Curiosities - Penguin</a></li>
         <li><a href="https://books.google.ca/books/about/Unexplained_Happenings.html?id=isUwvgAACAAJ&source=kp_book_description&redir_esc=y" target="_blank">Unexplained Happenings - Google Books</a></li>
         <li><a href="https://cus.ubt-uni.net/wp-content/uploads/2024/11/Kevin-Lynch-The-Image-of-the-City.pdf" target="_blank">Kevin Lynch: The Image of the City</a></li>
-        <li>Marcel Proust: In Search of Lost Time</li>
-        <li>Georges Perec: Species of Spaces and Other Pieces</li>
-        <li>Gaston Bachelard: The Poetics of Space</li>
         <li><a href="https://en.wikipedia.org/wiki/The_Scout_Mindset" target="_blank">Julia Galef: The Scout Mindset</a></li>
         <li><a href="https://www.instagram.com/reels/DdX4sZ_P35G/" target="_blank">Instagram Reference Reel</a></li>
       </ul>
@@ -399,6 +402,15 @@
         <li><a href="https://www.theguardian.com/books/2014/dec/17/chris-ware-here-richard-mcguire-review-graphic-novel" target="_blank">The Guardian: 'Here' Review</a></li>
         <li><a href="https://www.youtube.com/watch?v=I_id-SkGU2k" target="_blank">YouTube: 'Here' Adaptation Preview</a></li>
         <li>SimCity BuildIt</li>
+      </ul>
+    </div>
+
+    <div class="sidebar-section">
+      <h3>Professor Sources</h3>
+      <ul>
+        <li>Marcel Proust: In Search of Lost Time</li>
+        <li>Georges Perec: Species of Spaces and Other Pieces</li>
+        <li>Gaston Bachelard: The Poetics of Space</li>
       </ul>
     </div>
   </div>
