@@ -5,15 +5,22 @@
 <title>Process Book / Home</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400..700&display=swap" rel="stylesheet">
 
 <style>
+  @font-face {
+    font-family: "Departure Mono";
+    src: url("fonts/DepartureMono-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   :root {
-    --bg: #f4f4f0; 
+    --bg: #f4f4f0;
     --fg: #111111;
-    --sans: "DM Sans", sans-serif;
-    --mono: "Geist Pixel", monospace;
+    --sans: "Stack Sans Text", sans-serif;
+    --mono: "Departure Mono", monospace;
   }
 
   * {
@@ -25,78 +32,67 @@
     padding: 2rem;
     background-color: var(--bg);
     color: var(--fg);
-    font-family: var(--sans);
+    font-family: var(--mono);
+    letter-spacing: -0.03em;
     line-height: 1.5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    max-width: 900px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 
-  p, h1, h2, h3, li, a {
-    text-wrap: pretty;
-  }
-
-  h1, h2, h3 {
-    text-wrap: balance;
-  }
-
-  h1, h2 {
-    font-weight: 500;
-    margin: 0;
-    line-height: 1.2;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 400;
-  }
-
-  .wip {
-    font-family: var(--mono);
-    font-size: 1rem;
-    color: #888;
-    vertical-align: middle;
-    margin-left: 8px;
+  .card {
+    border: 2px solid var(--fg);
+    padding: 3.5rem 4rem;
+    max-width: 560px;
+    width: 100%;
+    background-color: var(--bg);
+    box-shadow: 6px 6px 0px var(--fg);
   }
 
   header {
-    display: flex;
-    padding-bottom: 1rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
   }
 
   header img {
-    height: 32px;
+    height: 36px;
     filter: invert(1);
   }
 
-  .intro {
-    margin-bottom: 3rem;
+  h1 {
+    font-family: var(--sans);
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.75rem 0;
+    line-height: 1.05;
+  }
+
+  .wip {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0 0 2.5rem 0;
+    text-transform: uppercase;
   }
 
   .links {
     display: flex;
-    gap: 1.5rem;
-    margin-top: 1rem;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .btn {
-    display: inline-flex;
+    display: inline-block;
     font-family: var(--mono);
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: var(--fg);
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: 2px solid var(--fg);
     background-color: var(--bg);
-    transition: background-color 0.2s, color 0.2s;
-    cursor: pointer;
   }
 
   .btn:hover:not(.disabled) {
@@ -114,18 +110,18 @@
 </head>
 <body>
 
-<header>
-  <img src="https://res.cloudinary.com/ayaanahmed/image/upload/v1769144180/ayaan-ahmed-logo_pqauyp.svg" alt="Ayaan Ahmed">
-</header>
+<div class="card">
+  <header>
+    <img src="https://res.cloudinary.com/ayaanahmed/image/upload/v1769144180/ayaan-ahmed-logo_pqauyp.svg" alt="Ayaan Ahmed">
+  </header>
 
-<div class="intro">
   <h1>Process Book</h1>
-  <h2>Unlikely + Time + Scale <span class="wip">[work in progress]</span></h2>
-</div>
+  <p class="wip">[work in progress]</p>
 
-<div class="links">
-  <a href="workshop-1.html" class="btn">Workshop 1</a>
-  <span class="btn disabled">Workshop 2</span>
+  <div class="links">
+    <a href="workshop-1.html" class="btn">Workshop 1</a>
+    <span class="btn disabled">Workshop 2</span>
+  </div>
 </div>
 
 </body>
