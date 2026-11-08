@@ -5,15 +5,22 @@
 <title>W1 / Process</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Text:wght@400..700&display=swap" rel="stylesheet">
 
 <style>
+  @font-face {
+    font-family: "Departure Mono";
+    src: url("fonts/DepartureMono-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
   :root {
-    --bg: #f4f4f0; 
+    --bg: #f4f4f0;
     --fg: #111111;
-    --sans: "DM Sans", sans-serif;
-    --mono: "Geist Pixel", monospace;
+    --sans: "Stack Sans Text", sans-serif;
+    --mono: "Departure Mono", monospace;
   }
 
   * {
@@ -22,68 +29,66 @@
 
   body {
     margin: 0;
-    padding: 2rem;
     background-color: var(--bg);
     color: var(--fg);
+    font-family: var(--mono);
+    letter-spacing: -0.03em;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 {
     font-family: var(--sans);
-    line-height: 1.5;
-    max-width: 1400px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-
-  p, h1, h2, h3, li, a {
-    text-wrap: pretty;
-  }
-
-  h1, h2, h3 {
-    text-wrap: balance;
-  }
-
-  h1, h2, h3 {
-    font-weight: 500;
+    letter-spacing: -0.02em;
+    font-weight: 600;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.15;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   h2 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.85rem;
+    margin-bottom: 0.75rem;
   }
 
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
-    font-family: var(--mono);
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--fg);
+    padding-bottom: 0.5rem;
   }
 
-  header {
+  .top-bar {
     display: flex;
-    padding-bottom: 1rem;
-    margin-bottom: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 3rem;
+    border-bottom: 2px solid var(--fg);
   }
 
-  header img {
+  .top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .top-bar img {
     height: 32px;
     filter: invert(1);
+    display: block;
   }
 
   .back {
-    display: inline-flex;
-    align-self: flex-start;
     font-family: var(--mono);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--fg);
     text-decoration: none;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border: 2px solid var(--fg);
-    margin-bottom: 3rem;
-    transition: background-color 0.2s, color 0.2s;
   }
 
   .back:hover {
@@ -91,60 +96,59 @@
     color: var(--bg);
   }
 
-  .intro {
-    margin-bottom: 3rem;
-  }
-
-  .intro p {
-    font-family: var(--mono);
-    font-size: 0.95rem;
-    margin: 0.5rem 0 0 0;
-  }
-
-  .layout-grid {
+  .roll-layout {
     display: grid;
-    grid-template-columns: minmax(auto, 800px) 1fr;
-    gap: 4rem;
-    align-items: start;
+    grid-template-columns: 1fr 380px;
+    min-height: 100vh;
   }
 
   .log {
-    padding-left: 40px;
+    margin-left: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
     background-image:
       linear-gradient(to right, var(--fg) 2px, transparent 2px),
       repeating-linear-gradient(to bottom, var(--fg) 0px, var(--fg) 2px, transparent 2px, transparent 24px);
     background-position: left top;
-    background-size: 2px 100%, 20px 24px;
+    background-size: 2px 100%, 16px 24px;
     background-repeat: no-repeat, repeat-y;
   }
 
   .entry {
-    padding-bottom: 5rem;
+    padding: 3.5rem 0;
+    border-bottom: 2px dashed var(--fg);
+  }
+
+  .entry:last-child {
+    border-bottom: none;
   }
 
   .entry p {
-    max-width: 60ch;
+    max-width: 62ch;
+    margin: 0;
+  }
+
+  .entry p:first-child {
+    margin-bottom: 1rem;
   }
 
   .entry p:first-child b {
     font-family: var(--mono);
     font-size: 0.85rem;
-    font-weight: 400;
+    font-weight: normal;
     display: inline-block;
     background-color: var(--fg);
     color: var(--bg);
-    padding: 2px 8px;
-    margin-bottom: 1rem;
+    padding: 4px 10px;
   }
 
   .pdf {
     width: 100%;
-    max-width: 480px;
+    max-width: 560px;
     aspect-ratio: 16 / 11;
     border: 2px solid var(--fg);
     background-color: var(--bg);
     margin-top: 1.5rem;
-    overflow: hidden;
   }
 
   .pdf iframe {
@@ -162,7 +166,7 @@
   }
 
   .image-row img {
-    height: 250px;
+    height: 260px;
     width: auto;
     display: block;
     border: 2px solid var(--fg);
@@ -170,11 +174,12 @@
 
   .sidebar {
     border-left: 2px solid var(--fg);
-    padding-left: 2rem;
+    padding: 3.5rem 2.5rem;
+    background-color: var(--bg);
   }
 
   .sidebar-section {
-    margin-bottom: 3rem;
+    margin-bottom: 3.5rem;
   }
 
   .sidebar ul {
@@ -184,9 +189,8 @@
   }
 
   .sidebar li {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     margin-bottom: 0.75rem;
-    max-width: 50ch;
   }
 
   .sidebar a {
@@ -202,32 +206,39 @@
   }
 
   @media (max-width: 900px) {
-    .layout-grid {
+    .top-bar {
+      padding: 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .roll-layout {
       grid-template-columns: 1fr;
+    }
+    .log {
+      margin-left: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 1.5rem;
     }
     .sidebar {
       border-left: none;
       border-top: 2px solid var(--fg);
-      padding-left: 0;
-      padding-top: 2rem;
+      padding: 2rem 1.5rem;
     }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <img src="https://res.cloudinary.com/ayaanahmed/image/upload/v1769144180/ayaan-ahmed-logo_pqauyp.svg" alt="Ayaan Ahmed">
-</header>
-
-<a class="back" href="index.html">&larr; Home</a>
-
-<div class="intro">
-  <h1>Process Book</h1>
-  <p>Unlikely + Time + Scale</p>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <img src="https://res.cloudinary.com/ayaanahmed/image/upload/v1769144180/ayaan-ahmed-logo_pqauyp.svg" alt="Ayaan Ahmed">
+    <h1>Process Book</h1>
+  </div>
+  <a class="back" href="index.html">&larr; Home</a>
 </div>
 
-<div class="layout-grid">
+<div class="roll-layout">
   
   <div class="log">
     <div class="entry">
